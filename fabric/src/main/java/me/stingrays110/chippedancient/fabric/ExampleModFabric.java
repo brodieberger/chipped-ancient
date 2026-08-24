@@ -1,8 +1,8 @@
-package chippedancient.fabric;
+package me.stingrays110.chippedancient.fabric;
 
 import net.fabricmc.api.ModInitializer;
 
-import chippedancient.ExampleMod;
+import me.stingrays110.chippedancient.ExampleMod;
 
 public final class ExampleModFabric implements ModInitializer {
     @Override

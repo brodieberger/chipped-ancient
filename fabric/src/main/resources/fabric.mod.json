@@ -16,10 +16,10 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "chippedancient.fabric.ExampleModFabric"
+      "me.stingrays110.chippedancient.fabric.ExampleModFabric"
     ],
     "client": [
-      "chippedancient.fabric.client.ExampleModFabricClient"
+      "me.stingrays110.chippedancient.fabric.client.ExampleModFabricClient"
     ]
   },
   "mixins": [

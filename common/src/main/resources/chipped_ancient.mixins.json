@@ -1,6 +1,6 @@
 {
   "required": true,
-  "package": "chippedancient.mixin",
+  "package": "me.stingrays110.chippedancient.mixin",
   "compatibilityLevel": "JAVA_21",
   "minVersion": "0.8",
   "client": [

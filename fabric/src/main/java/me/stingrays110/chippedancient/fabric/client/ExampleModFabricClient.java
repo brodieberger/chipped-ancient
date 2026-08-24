@@ -1,4 +1,4 @@
-package chippedancient.fabric.client;
+package me.stingrays110.chippedancient.fabric.client;
 
 import net.fabricmc.api.ClientModInitializer;
 
