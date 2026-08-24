@@ -29,7 +29,8 @@
     "fabricloader": ">=0.19.3",
     "minecraft": "~1.21.1",
     "java": ">=21",
-    "fabric-api": "*"
+    "fabric-api": "*",
+    "chipped": ">=4.0.2"
   },
   "suggests": {
     "another-mod": "*"
