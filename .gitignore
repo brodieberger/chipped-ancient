@@ -5,6 +5,7 @@ run/
 .idea/
 *.iml
 .vscode/
+bin/
 
 *.class
 *.log

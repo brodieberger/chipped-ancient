@@ -11,6 +11,9 @@ import net.minecraft.world.item.Item;
 public class ModItems {
     public static final ResourcefulRegistry<Item> ITEMS = ResourcefulRegistries.create(BuiltInRegistries.ITEM, ChippedAncient.MOD_ID);
 
+    public static final RegistryEntry<Item> ANCIENT_BENCH = ITEMS.register("ancient_bench",
+        () -> new BlockItem(ModBlocks.ANCIENT_BENCH.get(), new Item.Properties()));
+
     public static final RegistryEntry<Item> COBBLESTONE_B17 = ITEMS.register("cobblestone_b17",
         () -> new BlockItem(ModBlocks.COBBLESTONE_B17.get(), new Item.Properties()));
 }

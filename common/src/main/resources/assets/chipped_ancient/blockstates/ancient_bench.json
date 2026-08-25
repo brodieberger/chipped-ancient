@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "chipped_ancient:block/ancient_bench" },
+    "facing=east": { "model": "chipped_ancient:block/ancient_bench", "y": 90 },
+    "facing=south": { "model": "chipped_ancient:block/ancient_bench", "y": 180 },
+    "facing=west": { "model": "chipped_ancient:block/ancient_bench", "y": 270 }
+  }
+}
