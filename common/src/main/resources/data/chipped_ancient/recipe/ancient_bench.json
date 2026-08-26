@@ -1,6 +1,8 @@
 {
   "type": "chipped_ancient:workbench",
   "ingredients": [
-    { "tag": "chipped_ancient:cobblestone" }
+    { "tag": "chipped_ancient:cobblestone" },
+    { "tag": "chipped_ancient:oak_planks" },
+    { "tag": "chipped_ancient:glass" }
   ]
 }

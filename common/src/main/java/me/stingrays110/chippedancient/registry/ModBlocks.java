@@ -18,4 +18,10 @@ public class ModBlocks {
 
     public static final RegistryEntry<Block> COBBLESTONE_B17 = BLOCKS.register("cobblestone_b17",
         () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.COBBLESTONE)));
+
+    public static final RegistryEntry<Block> OAK_PLANKS_C0014A = BLOCKS.register("oak_planks_c0014a",
+        () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)));
+
+    public static final RegistryEntry<Block> GLASS_C0019A02 = BLOCKS.register("glass_c0019a02",
+        () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS)));
 }
