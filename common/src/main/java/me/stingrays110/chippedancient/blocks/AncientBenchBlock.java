@@ -1,7 +1,7 @@
 package me.stingrays110.chippedancient.blocks;
 
 import com.mojang.serialization.MapCodec;
-import earth.terrarium.chipped.common.menus.WorkbenchMenuProvider;
+import me.stingrays110.chippedancient.menus.AncientBenchMenuProvider;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionResult;
@@ -35,7 +35,7 @@ public class AncientBenchBlock extends HorizontalDirectionalBlock {
 
     @Override
     protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
-        player.openMenu(new WorkbenchMenuProvider(getName()));
+        player.openMenu(new AncientBenchMenuProvider(getName()));
         return InteractionResult.sidedSuccess(level.isClientSide);
     }
 
