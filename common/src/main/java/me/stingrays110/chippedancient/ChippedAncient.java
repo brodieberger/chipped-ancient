@@ -1,6 +1,5 @@
 package me.stingrays110.chippedancient;
 
-import me.stingrays110.chippedancient.network.NetworkHandler;
 import me.stingrays110.chippedancient.registry.ModBlocks;
 import me.stingrays110.chippedancient.registry.ModItems;
 import me.stingrays110.chippedancient.registry.ModMenuTypes;
@@ -11,8 +10,6 @@ public final class ChippedAncient {
     public static final String MOD_ID = "chipped_ancient";
 
     public static void init() {
-        NetworkHandler.init();
-
         ModBlocks.BLOCKS.init();
         ModItems.ITEMS.init();
         ModMenuTypes.MENUS.init();

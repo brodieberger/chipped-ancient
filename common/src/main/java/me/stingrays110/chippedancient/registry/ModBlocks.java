@@ -14,14 +14,14 @@ public class ModBlocks {
     public static final ResourcefulRegistry<Block> BLOCKS = ResourcefulRegistries.create(BuiltInRegistries.BLOCK, ChippedAncient.MOD_ID);
 
     public static final RegistryEntry<Block> ANCIENT_BENCH = BLOCKS.register("ancient_bench",
-        () -> new AncientBenchBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CRAFTING_TABLE)));
+        () -> new AncientBenchBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CRAFTING_TABLE).noLootTable()));
 
     public static final RegistryEntry<Block> COBBLESTONE_B17 = BLOCKS.register("cobblestone_b17",
-        () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.COBBLESTONE)));
+        () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.COBBLESTONE).noLootTable()));
 
     public static final RegistryEntry<Block> OAK_PLANKS_C0014A = BLOCKS.register("oak_planks_c0014a",
-        () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)));
+        () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noLootTable()));
 
     public static final RegistryEntry<Block> GLASS_C0019A02 = BLOCKS.register("glass_c0019a02",
-        () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS)));
+        () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS).noLootTable()));
 }

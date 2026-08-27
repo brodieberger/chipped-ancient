@@ -1,5 +1,6 @@
 package me.stingrays110.chippedancient.menus;
 
+import me.stingrays110.chippedancient.registry.ModMenuTypes;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.player.Inventory;
@@ -14,6 +15,6 @@ public record AncientBenchMenuProvider(Component name) implements MenuProvider {
 
     @Override
     public AbstractContainerMenu createMenu(int id, Inventory inventory, Player player) {
-        return new AncientBenchMenu(id, inventory);
+        return ModMenuTypes.create(id, inventory);
     }
 }
