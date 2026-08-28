@@ -14,6 +14,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import java.util.List;
 import java.util.Locale;
 
+// WIP Mixin to patch Chipped's bench only looking up chipped:workbench recipes. 
+// Calls chipped_ancient:workbench recipes.
 @Mixin(WorkbenchMenu.class)
 public abstract class WorkbenchMenuMixin {
 

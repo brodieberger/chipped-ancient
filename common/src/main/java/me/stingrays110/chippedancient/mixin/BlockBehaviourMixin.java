@@ -20,6 +20,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.List;
 
+// Mixin ripped from Chipped. Causes blocks to drop their loot, or themselves if they dont have loot
 @Mixin(BlockBehaviour.class)
 public abstract class BlockBehaviourMixin {
 

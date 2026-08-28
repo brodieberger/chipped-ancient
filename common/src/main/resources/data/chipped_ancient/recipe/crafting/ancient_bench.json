@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": { "item": "minecraft:crafting_table" },
+    "C": { "item": "minecraft:cobblestone" }
+  },
+  "pattern": [
+    "CCC",
+    "C#C",
+    "CCC"
+  ],
+  "result": {
+    "count": 1,
+    "id": "chipped_ancient:ancient_bench"
+  }
+}
