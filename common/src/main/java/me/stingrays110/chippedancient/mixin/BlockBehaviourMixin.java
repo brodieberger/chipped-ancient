@@ -9,6 +9,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
@@ -34,20 +36,18 @@ public abstract class BlockBehaviourMixin {
         cancellable = true
     )
     private void chippedAncient$getDrops(BlockState state, LootParams.Builder builder, CallbackInfoReturnable<List<ItemStack>> cir) {
-        if (!(((Object) this) instanceof Block block)) return;
-
-        ResourceLocation blockId = BuiltInRegistries.BLOCK.getKey(block);
-        if (!blockId.getNamespace().equals(ChippedAncient.MOD_ID)) return;
-
-        ResourceLocation tableId = ResourceLocation.fromNamespaceAndPath(blockId.getNamespace(), "blocks/" + blockId.getPath());
-        LootTable table = builder.getLevel().getServer().reloadableRegistries()
-            .getLootTable(ResourceKey.create(Registries.LOOT_TABLE, tableId));
-
-        if (table != LootTable.EMPTY) {
-            LootParams params = builder.withParameter(LootContextParams.BLOCK_STATE, state).create(LootContextParamSets.BLOCK);
-            cir.setReturnValue(table.getRandomItems(params));
-        } else {
-            cir.setReturnValue(List.of(new ItemStack(block)));
+        if (((Object) this) instanceof Block block) {
+            final var blockId = BuiltInRegistries.BLOCK.getKey(block);
+            if (blockId.getNamespace().equals(ChippedAncient.MOD_ID)) {
+                final var id = ResourceLocation.fromNamespaceAndPath(blockId.getNamespace(), "blocks/" + blockId.getPath());
+                final var table = builder.getLevel().getServer().reloadableRegistries().getLootTable(ResourceKey.create(Registries.LOOT_TABLE, id));
+                if (table != LootTable.EMPTY) {
+                    final LootParams context = builder.withParameter(LootContextParams.BLOCK_STATE, state).create(LootContextParamSets.BLOCK);
+                    cir.setReturnValue(table.getRandomItems(context));
+                } else if (!state.hasProperty(BlockStateProperties.DOUBLE_BLOCK_HALF) || state.getValue(BlockStateProperties.DOUBLE_BLOCK_HALF) == DoubleBlockHalf.LOWER) {
+                    cir.setReturnValue(List.of(new ItemStack(block)));
+                }
+            }
         }
     }
 }

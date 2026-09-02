@@ -25,16 +25,16 @@ public abstract class WorkbenchMenuMixin {
         if (menu.getType() != ModMenuTypes.ANCIENT_BENCH.get()) return;
 
         ci.cancel();
-        ItemStack selected = menu.selectedStack();
-        if (selected.isEmpty()) return;
+        ItemStack selectedStack = menu.selectedStack();
+        if (selectedStack.isEmpty()) return;
 
         menu.setFilter(filter);
-        CraftingInput input = CraftingInput.of(1, 1, List.of(selected));
+        CraftingInput craftingInput = CraftingInput.of(1, 1, List.of(selectedStack));
         menu.level().getRecipeManager()
-            .getRecipeFor(ModRecipeTypes.WORKBENCH.get(), input, menu.level()).ifPresentOrElse(recipe -> {
+            .getRecipeFor(ModRecipeTypes.WORKBENCH.get(), craftingInput, menu.level()).ifPresentOrElse(recipe -> {
                 List<ItemStack> results = menu.results();
                 results.clear();
-                recipe.value().getResults(input.getItem(0)).forEach(result -> {
+                recipe.value().getResults(craftingInput.getItem(0)).forEach(result -> {
                     if (filter == null
                         || StringUtil.isBlank(filter)
                         || result.getDisplayName().getString().toLowerCase(Locale.ROOT).contains(filter.toLowerCase(Locale.ROOT))) {
